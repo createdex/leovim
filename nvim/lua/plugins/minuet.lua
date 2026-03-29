@@ -40,7 +40,7 @@ return {
             model = "nvidia/nemotron-3-nano-30b-a3b:free",
             name = "OpenRouter",
             optional = {
-              max_tokens = 128,
+              max_tokens = 1024,
             },
           },
         },

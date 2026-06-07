@@ -1,10 +1,14 @@
 return {
   {
     "milanglacier/minuet-ai.nvim",
+    enabled = false,
     dependencies = { "nvim-lua/plenary.nvim" },
     event = "InsertEnter",
     config = function()
       require("minuet").setup({
+        filter = function(bufnr)
+          return vim.bo[bufnr].modifiable and vim.bo[bufnr].buftype == ""
+        end,
         virtualtext = {
           auto_trigger_ft = {
             "javascript",
